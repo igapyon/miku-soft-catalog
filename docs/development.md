@@ -21,6 +21,8 @@
 - handoff ルール
 - Java CLI 前提の runtime 説明
 - bundle 配布向け文書
+- bundle 作成スクリプト
+- `package.json` による bundle build の入口
 
 この repo が持たないもの:
 
@@ -34,7 +36,8 @@
 - 既存 WBS の変更は patch 系の流れを主にする
 - import/export の可否は `mikuproject-java` CLI の機能に従う
 - 文書上の会話例は Node 版との互換性を重視する
-- runtime の受け取り方は、bundle 同梱または development 外部参照 + bundle 同梱のどちらかで整理する
+- runtime は `workplace/mikuproject-java` で build した `mikuproject.jar` を bundle に取り込む前提で整理する
+- bundle 内 runtime の正規配置は `skills/mikuproject-java/vendor/mikuproject-java/mikuproject.jar` とする
 
 ## 初期成果物
 
@@ -53,5 +56,5 @@
 - CLI 呼び出し契約の固定
 - bundle 形式の具体化
 - `mikuproject-java` 依存の配布方法
-- development 時と bundled 時の runtime 検出ルール
+- `workplace/mikuproject-java` から jar を収集する bundle 手順の自動化
 - smoke test の方針

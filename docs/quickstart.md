@@ -20,14 +20,14 @@
 
 この時点でまだ向いていない相手:
 
-- runtime 配置や bundle 同梱方式が未確定なまま、完全な導入手順を期待する利用者
+- `workplace/` を使った checkout と build をまだ行っていない利用者
 
 ## 先に結論
 
 最初に確認すべきことは次です。
 
 1. このリポジトリ全体を workspace に置く
-2. `mikuproject-java` runtime を development 用の想定場所または bundle 形式で用意する
+2. `workplace/mikuproject-java` に `mikuproject-java` を checkout して build する
 3. `skills/mikuproject-java` を参照して使う
 4. Codex との会話で `mikuproject` skill を使う
 
@@ -41,18 +41,38 @@
 
 - `skills/mikuproject-java`
 - `docs/`
-- `mikuproject-java` runtime を見つけるための想定パスまたは bundle
+- `workplace/mikuproject-java`
 
 `skills/` だけでは不足します。
 
 ### 2. runtime を用意する
 
-現在の第一候補は次の 2 つです。
+`workplace/mikuproject-java` に `mikuproject-java` を checkout し、そこで build します。
 
-- development 時は近傍の `mikuproject-java` を参照する
-- bundle 時は実行に必要な最小 runtime を同梱する
+想定手順:
+
+1. `workplace/mikuproject-java` を用意する
+2. その中で `mvn package` を実行する
+3. `npm run build:bundle` を実行する
+
+これで次が作られます。
+
+```text
+bundle/mikuproject-skills-java/
+  skills/
+    mikuproject-java/
+      vendor/
+        mikuproject-java/
+          mikuproject.jar
+```
 
 runtime の扱いは [runtime-java-cli.md](./runtime-java-cli.md) を参照してください。
+
+実行コマンド:
+
+```bash
+npm run build:bundle
+```
 
 ### 3. 生成物の置き場所を決める
 

@@ -39,54 +39,44 @@
 
 ## runtime の受け取り方
 
-現在の検討対象は次の 2 案です。
+`mikuproject-skills-java` は、`workplace/mikuproject-java` に checkout した `mikuproject-java` を build し、その成果物である `mikuproject.jar` を bundle に取り込む前提とします。
 
-### 案2: bundle 同梱
+この repo は `mikuproject-java` の source を Git 管理下へ vendor しません。
+開発用 checkout と build 作業は `workplace/` 配下で行い、bundle には build 済み jar だけを含めます。
 
-- skill bundle の中に `mikuproject-java` の実行に必要な配布物を含める
-- skill はまず bundle 内 runtime を探して使う
-- 利用者は追加セットアップなしで使いやすい
+## build 手順の前提
 
-向いている点:
+1. `workplace/mikuproject-java` に `mikuproject-java` を checkout する
+2. `workplace/mikuproject-java` で `mvn package` を実行する
+3. 生成された `target/mikuproject.jar` を bundle 作成時に取り込む
+4. `npm run build:bundle` で skill bundle を生成する
 
-- runtime 検出が単純
-- 利用者にとって導入がわかりやすい
-- `mikuproject-skills` の bundled runtime に近い感覚を作りやすい
+`workplace/` 配下は Git 管理外とし、runtime の取得や build のための作業場所として扱います。
 
-気になる点:
+## bundle に取り込む成果物
 
-- bundle が重くなる
-- Java 配布物の更新責務がこの repo に寄る
-- 開発中の `mikuproject-java` 追従は別途考える必要がある
+- `mikuproject.jar`
 
-### 案3: 開発時は外部参照、bundle 時は同梱
+`mikuproject-dist.zip` も upstream 側では生成されますが、現時点で `mikuproject-skills-java` が bundle に取り込む対象は `mikuproject.jar` を正とします。
 
-- development repo では近傍の `mikuproject-java` を参照する
-- skill bundle では実行に必要な最小 runtime を同梱する
-- 開発時と配布時で runtime 検出ルールを分ける
+## bundle 内の配置先
 
-向いている点:
+bundle 内では、次の配置を正とします。
 
-- 開発時に `mikuproject-java` の更新を追いやすい
-- 配布時は利用者の導入負荷を下げられる
-- `mikuproject-skills` の development / bundled の考え方を踏襲しやすい
+```text
+bundle/mikuproject-skills-java/
+  skills/
+    mikuproject-java/
+      vendor/
+        mikuproject-java/
+          mikuproject.jar
+```
 
-気になる点:
+bundle 作成時の入力 jar は次を正とします。
 
-- runtime 検出ルールが 2 段になる
-- 文書とテストで development / bundled の両方を意識する必要がある
-
-## 現時点の推奨
-
-現時点では案3を第一候補とします。
-
-理由:
-
-- 利用者には bundle 同梱のわかりやすさを残せる
-- 開発者は `mikuproject-java` の更新を直接追いやすい
-- `mikuproject-skills` の runtime discipline をより自然に踏襲できる
-
-ただし、配布を最優先して早く MVP を作るなら、初期実装は案2から始めて後で案3へ拡張する進め方もあります。
+```text
+workplace/mikuproject-java/target/mikuproject.jar
+```
 
 ## CLI を使う条件
 
@@ -105,15 +95,13 @@
 
 ## 想定する runtime 探索順
 
-案3を採る場合、探索順のたたき台は次です。
+1. bundle 内の `mikuproject.jar`
+2. 見つからなければ hard error
 
-1. bundle 内の `mikuproject-java` runtime
-2. 明示設定された runtime path
-3. development 用の近傍 `mikuproject-java`
-4. 見つからなければ hard error
+想定する bundle 内 runtime path:
+
+- `skills/mikuproject-java/vendor/mikuproject-java/mikuproject.jar`
 
 ## まだ未確定の点
 
-- 実際の起動形式を `java -jar` とするか wrapper とするか
-- bundle に何を最小 runtime として含めるか
-- development 用の近傍 path をどう定義するか
+- runtime を呼び出す補助 wrapper を置くか

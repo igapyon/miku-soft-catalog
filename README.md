@@ -16,14 +16,16 @@ At the moment, the main skill in this repository is [`skills/mikuproject-java`](
 
 Runtime requirement:
 
-- Java is required to run the `mikuproject-java` CLI used by this skill
+- Java is required to build and run the `mikuproject-java` CLI used by this skill
+- Node.js is required to run the bundle build script of this repository
 
 ## Quick Start
 
-1. Prepare the `mikuproject-java` runtime in the expected location or bundle form.
-2. Verify the repository according to the current development rules.
-3. Open [`skills/mikuproject-java`](./skills/mikuproject-java) or install the generated bundle into your skill home.
-4. In conversation, start with a prompt such as `mikuproject, create a WBS for ...`.
+1. Check out `mikuproject-java` under `workplace/mikuproject-java` and build `mikuproject.jar`.
+2. Build the distributable skill bundle with `npm run build:bundle`.
+3. Verify the repository according to the current development rules.
+4. Open [`skills/mikuproject-java`](./skills/mikuproject-java) or install the generated bundle into your skill home.
+5. In conversation, start with a prompt such as `mikuproject, create a WBS for ...`.
 
 Typical things you can ask for:
 
@@ -69,14 +71,16 @@ This project is licensed under the Apache License 2.0. See [`LICENSE`](./LICENSE
 
 実行前提:
 
-- この skill が利用する `mikuproject-java` CLI の実行には Java が必要です
+- この skill が利用する `mikuproject-java` CLI の build と実行には Java が必要です
+- このリポジトリの bundle 作成には Node.js が必要です
 
 ## はじめかた
 
-1. 想定する場所または bundle 形式で `mikuproject-java` runtime を用意します。
-2. 現時点の開発ルールに沿ってリポジトリの状態を確認します。
-3. [`skills/mikuproject-java`](./skills/mikuproject-java) を参照するか、生成された bundle を skill home に配置します。
-4. 会話では、たとえば `mikuproject で WBS を作って` のように始めます。
+1. `workplace/mikuproject-java` に `mikuproject-java` を checkout し、`mikuproject.jar` を build します。
+2. `npm run build:bundle` で bundle を生成します。
+3. 現時点の開発ルールに沿ってリポジトリの状態を確認します。
+4. [`skills/mikuproject-java`](./skills/mikuproject-java) を参照するか、生成された bundle を skill home に配置します。
+5. 会話では、たとえば `mikuproject で WBS を作って` のように始めます。
 
 よくある使い方:
 
