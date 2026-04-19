@@ -1,0 +1,61 @@
+name: Build And Upload Release Asset
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Checkout mikuproject-java
+        uses: actions/checkout@v4
+        with:
+          repository: igapyon/mikuproject-java
+          path: workplace/mikuproject-java
+
+      - name: Build mikuproject-java jar
+        run: mvn package -DskipTests
+        working-directory: workplace/mikuproject-java
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build release bundle
+        run: npm run build
+
+      - name: Locate release zip
+        id: locate_zip
+        shell: bash
+        run: |
+          set -euo pipefail
+          zip_path="$(find bundle -maxdepth 1 -type f -name 'mikuproject-skills-java-*.zip' | head -n 1)"
+          if [[ -z "${zip_path}" ]]; then
+            echo "release zip not found under bundle/" >&2
+            exit 1
+          fi
+          echo "zip_path=${zip_path}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload zip to GitHub Release
+        run: gh release upload "${{ github.event.release.tag_name }}" "${{ steps.locate_zip.outputs.zip_path }}" --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

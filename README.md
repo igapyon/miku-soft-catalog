@@ -22,7 +22,7 @@ Runtime requirement:
 ## Quick Start
 
 1. Check out `mikuproject-java` under `workplace/mikuproject-java` and build `mikuproject.jar`.
-2. Build the distributable skill bundle with `npm run build:bundle`.
+2. Build the distributable skill bundle with `npm run build:bundle` or `npm run build:bundle:zip`.
 3. Verify the repository according to the current development rules.
 4. Open [`skills/mikuproject-java`](./skills/mikuproject-java) or install the generated bundle into your skill home.
 5. In conversation, start with a prompt such as `mikuproject, create a WBS for ...`.
@@ -48,6 +48,10 @@ Developer-oriented entry points:
 - [`docs/runtime-java-cli.md`](./docs/runtime-java-cli.md)
 - [`docs/compatibility.md`](./docs/compatibility.md)
 - [`docs/upstream-policy.md`](./docs/upstream-policy.md)
+
+Release build:
+
+- On GitHub Release publish, the configured Actions workflow builds the bundle zip and uploads it to the release asset list.
 
 ## License
 
@@ -77,7 +81,7 @@ This project is licensed under the Apache License 2.0. See [`LICENSE`](./LICENSE
 ## はじめかた
 
 1. `workplace/mikuproject-java` に `mikuproject-java` を checkout し、`mikuproject.jar` を build します。
-2. `npm run build:bundle` で bundle を生成します。
+2. `npm run build:bundle` または `npm run build:bundle:zip` で bundle を生成します。
 3. 現時点の開発ルールに沿ってリポジトリの状態を確認します。
 4. [`skills/mikuproject-java`](./skills/mikuproject-java) を参照するか、生成された bundle を skill home に配置します。
 5. 会話では、たとえば `mikuproject で WBS を作って` のように始めます。
@@ -103,3 +107,7 @@ This project is licensed under the Apache License 2.0. See [`LICENSE`](./LICENSE
 - [`docs/runtime-java-cli.md`](./docs/runtime-java-cli.md)
 - [`docs/compatibility.md`](./docs/compatibility.md)
 - [`docs/upstream-policy.md`](./docs/upstream-policy.md)
+
+Release build:
+
+- GitHub Release を publish したとき、設定済みの Actions workflow が bundle zip を生成して release asset へアップロードします。

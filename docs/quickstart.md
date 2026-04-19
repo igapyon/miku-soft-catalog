@@ -53,7 +53,7 @@
 
 1. `workplace/mikuproject-java` を用意する
 2. その中で `mvn package` を実行する
-3. `npm run build:bundle` を実行する
+3. `npm run build:bundle` または `npm run build:bundle:zip` を実行する
 
 これで次が作られます。
 
@@ -72,6 +72,7 @@ runtime の扱いは [runtime-java-cli.md](./runtime-java-cli.md) を参照し�
 
 ```bash
 npm run build:bundle
+npm run build:bundle:zip
 ```
 
 ### 3. 生成物の置き場所を決める
