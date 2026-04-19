@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "description": "Skill bundle repository for mikuproject-java",
   "scripts": {
-    "build:bundle": "node scripts/build-skill-bundle.mjs"
+    "build": "npm run build:bundle:zip",
+    "build:bundle": "node scripts/build-skill-bundle.mjs",
+    "build:bundle:zip": "npm run build:bundle && node scripts/build-skill-bundle-zip.mjs"
   }
 }

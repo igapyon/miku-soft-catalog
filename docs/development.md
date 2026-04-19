@@ -23,6 +23,7 @@
 - bundle 配布向け文書
 - bundle 作成スクリプト
 - `package.json` による bundle build の入口
+- release 用 GitHub Actions workflow
 
 この repo が持たないもの:
 
