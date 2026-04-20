@@ -58,4 +58,6 @@
 - bundle 形式の具体化
 - `mikuproject-java` 依存の配布方法
 - `workplace/mikuproject-java` から jar を収集する bundle 手順の自動化
+- `mikuproject-java` が安定した段階で、release build が取得する upstream を `main` に固定する
+- bundle に同梱した `mikuproject-java` の branch / commit を記録する manifest を追加する
 - smoke test の方針
