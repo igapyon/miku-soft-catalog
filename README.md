@@ -1,5 +1,13 @@
 # mikuproject-skills-java
 
+> Deprecated: `mikuproject-skills-java` was a short-lived experimental repository and is no longer the target package.
+> Java CLI support is being folded into the normal `mikuproject-skills` package as a bundled runtime artifact.
+> Use `mikuproject-skills` for ongoing Agent Skills work.
+>
+> 非推奨: `mikuproject-skills-java` は短期間だけ存在した実験的な repository で、今後の対象 package ではありません。
+> Java CLI 対応は通常の `mikuproject-skills` package に bundled runtime artifact として統合する方針です。
+> 今後の Agent Skills 作業では `mikuproject-skills` を使ってください。
+
 ## English
 
 `mikuproject-skills-java` is a set of skills for creating and revising WBS plans with `mikuproject-java`.
