@@ -1,8 +1,8 @@
 # miku-soft catalog
 
-miku-soft カタログ一覧です。GitHub user `igapyon` の公開リポジトリから、名前が `miku` で始まるものを抽出して作成しました。
-
 miku-soft は、Mikuku さんと Toshiki Iga が作成・管理している OSS 群です。
+
+このページでは、miku-soft の各リポジトリをファミリー別に整理しています。
 
 取得日: 2026-05-09
 
@@ -118,6 +118,8 @@ MusicXML中心の楽譜変換ツール系列です。
 - Note: `https://note.com/search?q=対象名&context=note&mode=search` の検索結果ページに含まれる検索結果件数を参照
 
 ## Sources
+
+このカタログは、GitHub user `igapyon` の公開リポジトリから、名前が `miku` で始まるものを抽出して作成しました。
 
 - https://github.com/igapyon?tab=repositories
 - https://api.github.com/users/igapyon/repos?per_page=100&page=1&sort=full_name
