@@ -1,113 +1,125 @@
-# mikuproject-skills-java
+# miku-soft catalog
 
-## English
+miku-soft は、Mikuku さんと Toshiki Iga が作成・管理している OSS 群です。
 
-`mikuproject-skills-java` is a set of skills for creating and revising WBS plans with `mikuproject-java`.
+このページでは、miku-soft の各リポジトリをファミリー別に整理しています。
 
-What users should care about first:
+取得日: 2026-05-09
 
-- you can start by saying `mikuproject`
-- you can create a WBS through conversation
-- you can revise and update an existing plan
-- you can export results as `XLSX`, `Markdown`, `SVG`, and other useful formats
-- when needed, you can also handle plan data in forms that are easy to save, reuse, and hand off
+## miku-docx2md family
 
-At the moment, the main skill in this repository is [`skills/mikuproject-java`](./skills/mikuproject-java).
+DOCXをMarkdownへ変換するツール系列です。
 
-Runtime requirement:
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-docx2md](https://github.com/igapyon/miku-docx2md) | 標準実装 (TypeScript) |  | DOCXをMarkdownへ変換 |
+| [miku-docx2md-java](https://github.com/igapyon/miku-docx2md-java) | Java実装 |  | DOCX→MarkdownのJava版 |
 
-- Java is required to build and run the `mikuproject-java` CLI used by this skill
-- Node.js is required to run the bundle build script of this repository
+## miku-grep family
 
-## Quick Start
+AI agent向けの構造化grepツール系列です。
 
-1. Check out `mikuproject-java` under `workplace/mikuproject-java` and build `mikuproject.jar`.
-2. Build the distributable skill bundle with `npm run build:bundle` or `npm run build:bundle:zip`.
-3. Verify the repository according to the current development rules.
-4. Open [`skills/mikuproject-java`](./skills/mikuproject-java) or install the generated bundle into your skill home.
-5. In conversation, start with a prompt such as `mikuproject, create a WBS for ...`.
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-grep](https://github.com/igapyon/miku-grep) | 標準実装 (TypeScript) | ベータ版 | AI agent向け構造化grep CLI |
+| [miku-grep-java](https://github.com/igapyon/miku-grep-java) | Java実装 | ベータ版 | miku-grepのJava版 |
+| [miku-grep-skills](https://github.com/igapyon/miku-grep-skills) | Agent Skill (Markdown) | ベータ版 | miku-grep用Agent Skill |
 
-Typical things you can ask for:
+## miku-indexgen family
 
-- create a new WBS from requirements or constraints
-- revise an existing WBS
-- export the current result as `XLSX`
-- export the current result as `Markdown`
-- export the current result as daily or weekly `SVG`
+Markdownディレクトリのindexを生成するツール系列です。
 
-## Notes
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-indexgen](https://github.com/igapyon/miku-indexgen) | 標準実装 (TypeScript) |  | Markdownディレクトリのindex生成 |
+| [miku-indexgen-java](https://github.com/igapyon/miku-indexgen-java) | Java実装 |  | miku-indexgenのJava版 |
 
-- This repository does not aim to replace the `mikuproject` browser UI.
-- For advanced workflows, the skill can also work with structured plan data such as workbook JSON.
-- If you are evaluating or developing the repository itself, see the documents under [`docs/`](./docs/).
+## miku-readfile family
 
-Developer-oriented entry points:
+UTF-8/Shift_JISファイルを読み取るツール系列です。
 
-- [`docs/quickstart.md`](./docs/quickstart.md)
-- [`docs/development.md`](./docs/development.md)
-- [`docs/runtime-java-cli.md`](./docs/runtime-java-cli.md)
-- [`docs/compatibility.md`](./docs/compatibility.md)
-- [`docs/upstream-policy.md`](./docs/upstream-policy.md)
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-readfile](https://github.com/igapyon/miku-readfile) | 標準実装 (TypeScript) | ベータ版 | UTF-8/Shift_JISファイル読取CLI |
+| [miku-readfile-java](https://github.com/igapyon/miku-readfile-java) | Java実装 | ベータ版 | miku-readfileのJava版 |
+| [miku-readfile-skills](https://github.com/igapyon/miku-readfile-skills) | Agent Skill (Markdown) | ベータ版 | miku-readfile用Agent Skill |
 
-Release build:
+## miku-text-bundle family
 
-- On GitHub Release publish, the configured Actions workflow builds the bundle zip and uploads it to the release asset list.
+リポジトリ内のテキストをMarkdown束に集約するツール系列です。
 
-## License
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-text-bundle](https://github.com/igapyon/miku-text-bundle) | 標準実装 (TypeScript) |  | リポジトリテキストをMarkdown束に集約 |
+| [miku-text-bundle-java](https://github.com/igapyon/miku-text-bundle-java) | Java実装 |  | miku-text-bundleのJava版 |
+| [miku-text-bundle-skills](https://github.com/igapyon/miku-text-bundle-skills) | Agent Skill (Markdown) |  | miku-text-bundle用Agent Skill |
 
-This project is licensed under the Apache License 2.0. See [`LICENSE`](./LICENSE).
+## miku-xlsx2md family
 
----
+XLSXをMarkdownへ抽出するツール系列です。
 
-## 日本語
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-xlsx2md](https://github.com/igapyon/miku-xlsx2md) | 標準実装 (TypeScript) |  | XLSXをMarkdownへ抽出 |
+| [miku-xlsx2md-java](https://github.com/igapyon/miku-xlsx2md-java) | Java実装 |  | miku-xlsx2mdのJava版 |
 
-`mikuproject-skills-java` は、`mikuproject-java` を使って WBS を作成・修正できる skill 集です。
+## mikuproject family
 
-まずユーザーにとって重要なのは次の点です。
+MS Project XML/WBS変換・可視化のツール系列です。
 
-- `mikuproject` と言って使い始められること
-- 対話から WBS を作成できること
-- 既存の計画を修正・更新できること
-- `XLSX`、`Markdown`、`SVG` などの形で出力できること
-- 必要に応じて、計画データを保存・再利用・受け渡ししやすい形でも扱えること
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [mikuproject](https://github.com/igapyon/mikuproject) | 標準実装 (TypeScript) |  | MS Project XML/WBS変換・可視化 |
+| [mikuproject-java](https://github.com/igapyon/mikuproject-java) | Java実装 |  | mikuprojectのJava版 |
+| [mikuproject-mcp](https://github.com/igapyon/mikuproject-mcp) | MCP server (TypeScript) |  | mikuproject用MCP server |
+| [mikuproject-skills](https://github.com/igapyon/mikuproject-skills) | Agent Skills (Markdown) |  | mikuproject用Agent Skills |
 
-現在、このリポジトリの中心となる skill は [`skills/mikuproject-java`](./skills/mikuproject-java) です。
+## mikuscore family
 
-実行前提:
+MusicXML中心の楽譜変換ツール系列です。
 
-- この skill が利用する `mikuproject-java` CLI の build と実行には Java が必要です
-- このリポジトリの bundle 作成には Node.js が必要です
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [mikuscore](https://github.com/igapyon/mikuscore) | 標準実装 (TypeScript) |  | MusicXML中心の楽譜変換 |
+| [mikuscore-java](https://github.com/igapyon/mikuscore-java) | Java実装 |  | mikuscoreのJava版、開発途中 |
+| [mikuscore-skills](https://github.com/igapyon/mikuscore-skills) | Agent Skills (Markdown) |  | mikuscore用Agent Skills |
 
-## はじめかた
+## Standalone tools
 
-1. `workplace/mikuproject-java` に `mikuproject-java` を checkout し、`mikuproject.jar` を build します。
-2. `npm run build:bundle` または `npm run build:bundle:zip` で bundle を生成します。
-3. 現時点の開発ルールに沿ってリポジトリの状態を確認します。
-4. [`skills/mikuproject-java`](./skills/mikuproject-java) を参照するか、生成された bundle を skill home に配置します。
-5. 会話では、たとえば `mikuproject で WBS を作って` のように始めます。
+| リポジトリ | 位置づけ | 状態 | 概要 |
+|---|---|---:|---|
+| [miku-abc-player](https://github.com/igapyon/miku-abc-player) | 標準実装 (TypeScript) |  | mikuscoreの機能をABCにフォーカスした、ABC/MusicXML/MIDI/MuseScore対応の単一HTMLアプリ |
+| [miku-javaclass2json-java](https://github.com/igapyon/miku-javaclass2json-java) | Java実装 |  | class/jarをJSON/JSONL化 |
+| [miku-unicode-guard](https://github.com/igapyon/miku-unicode-guard) | 標準実装 (TypeScript) |  | 怪しいUnicode文字検出CLI |
 
-よくある使い方:
+## Article searches
 
-- 要件や制約から新しい WBS を作る
-- 既存の WBS を修正する
-- 現在の結果を `XLSX` として出力する
-- 現在の結果を `Markdown` として出力する
-- 現在の結果を日次または週次の `SVG` として出力する
+記事が存在する場合に見つけやすくするための検索リンクです。対象によっては該当する記事がない場合があります。
 
-## 補足
+件数取得日: 2026-05-09
 
-- このリポジトリは `mikuproject` のブラウザ UI を置き換えることを目的にはしていません。
-- より高度な運用では、workbook JSON などの構造化された計画データも扱えます。
-- リポジトリ自体の評価や開発を行う場合は [`docs/`](./docs/) 以下の文書を参照してください。
+| 対象 | Qiita記事検索 | 件数 | Note記事検索 | 件数 |
+|---|---|---:|---|---:|
+| miku-abc-player | [検索](https://qiita.com/search?q=%5Bmiku-abc-player%5D) | 2 | [検索](https://note.com/search?q=miku-abc-player&context=note&mode=search) | 2 |
+| miku-docx2md | [検索](https://qiita.com/search?q=%5Bmiku-docx2md%5D) | 0 | [検索](https://note.com/search?q=miku-docx2md&context=note&mode=search) | 0 |
+| miku-grep | [検索](https://qiita.com/search?q=%5Bmiku-grep%5D) | 6 | [検索](https://note.com/search?q=miku-grep&context=note&mode=search) | 0 |
+| miku-indexgen | [検索](https://qiita.com/search?q=%5Bmiku-indexgen%5D) | 4 | [検索](https://note.com/search?q=miku-indexgen&context=note&mode=search) | 1 |
+| miku-javaclass2json-java | [検索](https://qiita.com/search?q=%5Bmiku-javaclass2json-java%5D) | 1 | [検索](https://note.com/search?q=miku-javaclass2json-java&context=note&mode=search) | 0 |
+| miku-readfile | [検索](https://qiita.com/search?q=%5Bmiku-readfile%5D) | 3 | [検索](https://note.com/search?q=miku-readfile&context=note&mode=search) | 0 |
+| miku-text-bundle | [検索](https://qiita.com/search?q=%5Bmiku-text-bundle%5D) | 5 | [検索](https://note.com/search?q=miku-text-bundle&context=note&mode=search) | 0 |
+| miku-unicode-guard | [検索](https://qiita.com/search?q=%5Bmiku-unicode-guard%5D) | 0 | [検索](https://note.com/search?q=miku-unicode-guard&context=note&mode=search) | 0 |
+| miku-xlsx2md | [検索](https://qiita.com/search?q=%5Bmiku-xlsx2md%5D) | 1 | [検索](https://note.com/search?q=miku-xlsx2md&context=note&mode=search) | 0 |
+| mikuproject | [検索](https://qiita.com/search?q=%5Bmikuproject%5D) | 7 | [検索](https://note.com/search?q=mikuproject&context=note&mode=search) | 3 |
+| mikuscore | [検索](https://qiita.com/search?q=%5Bmikuscore%5D) | 6 | [検索](https://note.com/search?q=mikuscore&context=note&mode=search) | 3 |
 
-開発者向けの入口:
+取得方法メモ:
 
-- [`docs/quickstart.md`](./docs/quickstart.md)
-- [`docs/development.md`](./docs/development.md)
-- [`docs/runtime-java-cli.md`](./docs/runtime-java-cli.md)
-- [`docs/compatibility.md`](./docs/compatibility.md)
-- [`docs/upstream-policy.md`](./docs/upstream-policy.md)
+- Qiita: `https://qiita.com/api/v2/items?query=%5B対象名%5D&per_page=1` の `total-count` ヘッダを参照
+- Note: `https://note.com/search?q=対象名&context=note&mode=search` の検索結果ページに含まれる検索結果件数を参照
 
-Release build:
+## Sources
 
-- GitHub Release を publish したとき、設定済みの Actions workflow が bundle zip を生成して release asset へアップロードします。
+このカタログは、GitHub user `igapyon` の公開リポジトリから、名前が `miku` で始まるものを抽出して作成しました。
+
+- https://github.com/igapyon?tab=repositories
+- https://api.github.com/users/igapyon/repos?per_page=100&page=1&sort=full_name
