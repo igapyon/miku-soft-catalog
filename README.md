@@ -4,7 +4,7 @@ miku-soft は、Mikuku さんと Toshiki Iga が作成・管理している OSS 
 
 このページでは、miku-soft の各リポジトリをファミリー別に整理しています。
 
-取得日: 2026-05-09
+取得日: 2026-05-17
 
 ## miku-docx2md family
 
@@ -120,21 +120,21 @@ MusicXML中心の楽譜変換ツール系列です。
 
 記事が存在する場合に見つけやすくするための検索リンクです。対象によっては該当する記事がない場合があります。
 
-件数取得日: 2026-05-09
+件数取得日: 2026-05-17
 
-| 対象 | Qiita記事検索 | 件数 | Note記事検索 | 件数 |
+| 対象 | Note記事検索 | 件数 | Qiita記事検索 | 件数 |
 |---|---|---:|---|---:|
-| miku-abc-player | [検索](https://qiita.com/search?q=%5Bmiku-abc-player%5D) | 2 | [検索](https://note.com/search?q=miku-abc-player&context=note&mode=search) | 2 |
-| miku-docx2md | [検索](https://qiita.com/search?q=%5Bmiku-docx2md%5D) | 1 | [検索](https://note.com/search?q=miku-docx2md&context=note&mode=search) | 0 |
-| miku-grep | [検索](https://qiita.com/search?q=%5Bmiku-grep%5D) | 6 | [検索](https://note.com/search?q=miku-grep&context=note&mode=search) | 0 |
-| miku-indexgen | [検索](https://qiita.com/search?q=%5Bmiku-indexgen%5D) | 5 | [検索](https://note.com/search?q=miku-indexgen&context=note&mode=search) | 1 |
-| miku-javaclass2json-java | [検索](https://qiita.com/search?q=%5Bmiku-javaclass2json-java%5D) | 1 | [検索](https://note.com/search?q=miku-javaclass2json-java&context=note&mode=search) | 0 |
-| miku-readfile | [検索](https://qiita.com/search?q=%5Bmiku-readfile%5D) | 3 | [検索](https://note.com/search?q=miku-readfile&context=note&mode=search) | 0 |
-| miku-text-bundle | [検索](https://qiita.com/search?q=%5Bmiku-text-bundle%5D) | 6 | [検索](https://note.com/search?q=miku-text-bundle&context=note&mode=search) | 0 |
-| miku-unicode-guard | [検索](https://qiita.com/search?q=%5Bmiku-unicode-guard%5D) | 0 | [検索](https://note.com/search?q=miku-unicode-guard&context=note&mode=search) | 0 |
-| miku-xlsx2md | [検索](https://qiita.com/search?q=%5Bmiku-xlsx2md%5D) | 2 | [検索](https://note.com/search?q=miku-xlsx2md&context=note&mode=search) | 0 |
-| mikuproject | [検索](https://qiita.com/search?q=%5Bmikuproject%5D) | 8 | [検索](https://note.com/search?q=mikuproject&context=note&mode=search) | 3 |
-| mikuscore | [検索](https://qiita.com/search?q=%5Bmikuscore%5D) | 6 | [検索](https://note.com/search?q=mikuscore&context=note&mode=search) | 3 |
+| miku-abc-player | [検索](https://note.com/search?q=miku-abc-player&context=note&mode=search) | 2 | [検索](https://qiita.com/search?q=%5Bmiku-abc-player%5D) | 4 |
+| miku-docx2md | [検索](https://note.com/search?q=miku-docx2md&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-docx2md%5D) | 2 |
+| miku-grep | [検索](https://note.com/search?q=miku-grep&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-grep%5D) | 7 |
+| miku-indexgen | [検索](https://note.com/search?q=miku-indexgen&context=note&mode=search) | 2 | [検索](https://qiita.com/search?q=%5Bmiku-indexgen%5D) | 6 |
+| miku-javaclass2json-java | [検索](https://note.com/search?q=miku-javaclass2json-java&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-javaclass2json-java%5D) | 2 |
+| miku-readfile | [検索](https://note.com/search?q=miku-readfile&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-readfile%5D) | 4 |
+| miku-text-bundle | [検索](https://note.com/search?q=miku-text-bundle&context=note&mode=search) | 1 | [検索](https://qiita.com/search?q=%5Bmiku-text-bundle%5D) | 9 |
+| miku-unicode-guard | [検索](https://note.com/search?q=miku-unicode-guard&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-unicode-guard%5D) | 1 |
+| miku-xlsx2md | [検索](https://note.com/search?q=miku-xlsx2md&context=note&mode=search) | 0 | [検索](https://qiita.com/search?q=%5Bmiku-xlsx2md%5D) | 3 |
+| mikuproject | [検索](https://note.com/search?q=mikuproject&context=note&mode=search) | 3 | [検索](https://qiita.com/search?q=%5Bmikuproject%5D) | 9 |
+| mikuscore | [検索](https://note.com/search?q=mikuscore&context=note&mode=search) | 3 | [検索](https://qiita.com/search?q=%5Bmikuscore%5D) | 8 |
 
 取得方法メモ:
 
