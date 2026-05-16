@@ -1,4 +1,4 @@
-# Miku Software MCP Design v20260506
+# Miku Software MCP Design
 
 This memo organizes design characteristics commonly expected for MCP server versions in the `miku` software series.
 
@@ -39,11 +39,13 @@ This document is not a detailed specification for one MCP repository. Repository
 
 Use the shared design documents together as follows.
 
-- `docs/miku-soft-10-mainapp-design-v20260506.md`
+- `miku-soft-10-mainapp-design.md`
   - describes the upstream product design and semantic center
-- `docs/miku-soft-40-agentskills-design-v20260506.md`
+- `miku-soft-11-web-design.md`
+  - describes the dependent Web App surface when browser operation exists
+- `miku-soft-40-agentskills-design.md`
   - describes how Agent Skills versions expose miku workflows to AI agents
-- `docs/miku-soft-50-mcp-design-v20260506.md`
+- `miku-soft-50-mcp-design.md`
   - describes how MCP server versions should expose miku workflows to MCP clients
 
 This document separates the following levels.
@@ -105,7 +107,10 @@ Projects with the `-mcp` suffix are positioned as MCP server adapters for origin
 For `mikuproject-mcp`, the server implementation is Node.js / TypeScript.
 `packages/java/` is intentionally only a placeholder.
 
-This document focuses on MCP server versions. It does not define the Web UI conventions for upstream main applications, Java packaging conventions for Java application versions, or skill packaging conventions for Agent Skills repositories.
+This document focuses on MCP server versions. It does not define Web App
+conventions for the `11 Web App` layer, Java packaging conventions for Java
+application versions, or skill packaging conventions for Agent Skills
+repositories.
 
 ## Shared Direction
 
